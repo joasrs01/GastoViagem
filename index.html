@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<style>
+    body {
+        text-align: center;
+        background-color: gray;
+    }
+
+    #tabelaViagem {
+        text-align: right;
+    }
+
+    #txtDistancia {
+        border-radius: 5px;
+        border-color: grey;
+    }
+
+    #txtConsumo {
+        border-radius: 5px;
+        border-color: grey;
+    }
+
+    #txtGasolina {
+        border-radius: 5px;
+        border-color: grey;
+    }
+
+    #txtResultado {
+        border-radius: 5px;
+        border-color: grey;
+    }
+
+    #btnCalcular {
+        background-color: cornflowerblue;
+        /* padding-right: 10px;
+        padding-left: 10px;
+        padding-bottom: 10px;   
+        padding-top: 10px; */
+        padding: 10px;
+        margin: 5px;
+        color: aliceblue;
+        text-align: center;
+        /* box-shadow: 5px 5px 5px whitesmoke; */
+        font-weight: 500;
+        font-size: large;
+        font-family: Arial;
+
+        border-radius: 5px;
+        border-color: azure;
+        cursor: pointer;
+    }
+
+    #header1 {
+        font-size: x-large;
+        background-color: cornflowerblue;
+        padding: 25px;
+        color: aliceblue;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: xx-large;
+    }
+</style>
+
+<head>
+    <title>Gasto Viagem</title>
+</head>
+
+<body>
+    <header id="header1">
+        <label id="lbl1">Calculo de gasto em uma viagem</label><br><br>
+    </header>
+    <form id="form1">
+        <div id="viagem">
+            <table id="tabelaViagem" align="center">
+                <tr>
+                    <td>
+                        <label id="lbl2">Distancia em km</label>
+                        <input type="textbox" id="txtDistancia"><br>
+                        <label id="lbl3">consumo do carro em km/l</label>
+                        <input type="textbox" id="txtConsumo"><br>
+                        <label id="lbl4 ">preço gasolina</label>
+                        <input type="textbox" id="txtGasolina"><br>
+                        <input type="button" id="btnCalcular" value="Calcular" onclick="CalcularGasto()">
+                        <div id="resultado">
+                            <label id="lbl5">Resultado:</label>
+                            <input type="textbox" id="txtResultado"><br>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+    <!-- <script src="script.js"></script> -->
+    <script>
+        function CalcularGasto() {
+            let distancia = parseFloat(form1.txtDistancia.value);
+            let consumo = parseFloat(form1.txtConsumo.value);
+            let gasolina = parseFloat(form1.txtGasolina.value);
+            let resultado = (gasolina / consumo) * distancia;
+
+            form1.txtResultado.value = resultado;
+        }
+    </script>
+</body>
+
+</html>
